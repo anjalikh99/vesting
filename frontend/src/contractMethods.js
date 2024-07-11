@@ -84,6 +84,8 @@ async function changeNetwork() {
 
   export async function initiateVesting() {
     const contract = await initiateContract();
+    let provider = new ethers.BrowserProvider(window.ethereum);
+     let signer = await provider.getSigner();
 
     const vestingStarted = await contract.vestingStarted();
     if (!vestingStarted) {
@@ -202,7 +204,7 @@ async function changeNetwork() {
         return true;
        }
     } catch(e) {
-      console.log(e);
+      alert("Something went wrong");
     }
 
     return false;

@@ -1,4 +1,4 @@
 {
-  "LockModule#MyToken": "0xED40F39aD907b50fc3f0E5123c0f359c0074Cb7f",
-  "LockModule#VestingContract": "0xE5F92738ED3315700dcbb6BaA3DA9F98f5aB1AAc"
+  "LockModule#MyVestToken": "0x27D16411B3A45862170C4A4f2476AA987827a078",
+  "LockModule#VestingContract": "0x313F06294b3Ad57Ee54e220f87A6dC9Fd24E409a"
 }

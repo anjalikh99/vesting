@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import {useNavigate} from 'react-router-dom';
 import {getCliffTime, getReleaseAmount, claimTokens} from './contractMethods';
 import './styles.css';
 
 function Beneficiary() {
+  const navigate = useNavigate();
   const [cliffTime, setCliffTime] = useState('');
   const [releasableAmount, setReleasableAmount] = useState('');
 
@@ -26,6 +28,10 @@ function Beneficiary() {
       alert("Tokens transferred into your acount");
     }
   };
+  const handleLogout = () => {
+    localStorage.removeItem('beneficiaryAddress');
+    navigate('/');
+ }
 
   return (
     <div className="container">
@@ -33,6 +39,7 @@ function Beneficiary() {
       <p>Cliff Time: {cliffTime} Months</p>
       <p>Releasable Amount: {releasableAmount} MYT</p>
       <button className="claim" onClick={handleClaimTokens}>Claim Tokens</button>
+      <button className='claim' onClick={handleLogout}>Logout</button>
     </div>
   );
 }

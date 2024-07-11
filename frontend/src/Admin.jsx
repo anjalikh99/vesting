@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {initiateVesting, addBeneficiary} from './contractMethods';
 
 function Admin() {
+  const navigate = useNavigate();
   const [beneficiary, setBeneficiary] = useState('');
   const [role, setRole] = useState('');
   const [amount, setAmount] = useState('');
@@ -22,6 +24,11 @@ function Admin() {
       alert ("Vesting started successfully");
     }
   };
+
+  const handleLogout = () => {
+     localStorage.removeItem('ownerAddress');
+     navigate('/');
+  }
 
   return (
     <div className="container">
@@ -47,6 +54,7 @@ function Admin() {
         <button type="submit">Add Beneficiary</button>
       </form>
       <button className="claim" onClick={handleStartVesting}>Start Vesting</button>
+      <button className='claim' onClick={handleLogout}>Logout</button>
     </div>
   );
 }
