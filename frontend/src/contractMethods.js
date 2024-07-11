@@ -186,7 +186,7 @@ async function changeNetwork() {
     const contract = await initiateContract();
 
     try {
-       return parseInt(await contract.releasableAmount(signer.address))/ 10**18;
+       return parseInt(await contract.releasableAmount(signer.address));
     } catch(err) {
       console.log(err);
     }

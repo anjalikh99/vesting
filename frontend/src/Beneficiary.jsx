@@ -37,7 +37,7 @@ function Beneficiary() {
     <div className="container">
       <h1>Beneficiary Page</h1>
       <p>Cliff Time: {cliffTime} Months</p>
-      <p>Releasable Amount: {releasableAmount} MYT</p>
+      <p>Releasable Amount: {releasableAmount} MVT</p>
       <button className="claim" onClick={handleClaimTokens}>Claim Tokens</button>
       <button className='claim' onClick={handleLogout}>Logout</button>
     </div>
